@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+    <typeAliases>
+        <package name="com.literature.po"/>
+    </typeAliases>
+    <!-- 配置分页插件 -->
+    <plugins>
+	    <!-- SQL 执行性能分析，开发环境使用，用于输出sql语句及执行时间，线上不推荐。 maxTime 指的是 sql 最大执行时长 -->
+	    <plugin interceptor="com.baomidou.mybatisplus.extension.plugins.PerformanceInterceptor">
+	        <property name="maxTime" value="100" />
+	        <!--SQL是否格式化 默认false-->
+	        <property name="format" value="true" />
+	    </plugin>
+	    <plugin interceptor="com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor">
+	        <!-- <property name="dialectClazz" value="mysql" /> -->
+	    </plugin>
+	</plugins>
+</configuration>
